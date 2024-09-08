@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_common_image_galleries",
+  "info": {
+    "displayName": "ImageGallery",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
