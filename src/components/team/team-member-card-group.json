@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_team_team_member_card_groups",
+  "info": {
+    "displayName": "TeamMemberCardGroup",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Featured",
+        "Simple"
+      ],
+      "default": "Simple",
+      "required": true
+    },
+    "members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "team.team-member-card",
+      "required": true
+    }
+  }
+}

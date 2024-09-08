@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "HomePage"
+    "displayName": "HomePage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,24 @@
       "type": "component",
       "repeatable": false,
       "component": "common.image-gallery",
+      "required": true
+    },
+    "projectLeaders": {
+      "type": "component",
+      "repeatable": false,
+      "component": "team.team-member-card-group",
+      "required": true
+    },
+    "collaborators": {
+      "type": "component",
+      "repeatable": false,
+      "component": "team.team-member-card-group",
+      "required": true
+    },
+    "developers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "team.team-member-card-group",
       "required": true
     }
   }

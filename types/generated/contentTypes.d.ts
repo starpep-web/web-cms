@@ -368,12 +368,19 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     singularName: 'home-page';
     pluralName: 'home-pages';
     displayName: 'HomePage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     imageGallery: Attribute.Component<'common.image-gallery'> &
+      Attribute.Required;
+    projectLeaders: Attribute.Component<'team.team-member-card-group'> &
+      Attribute.Required;
+    collaborators: Attribute.Component<'team.team-member-card-group'> &
+      Attribute.Required;
+    developers: Attribute.Component<'team.team-member-card-group'> &
       Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

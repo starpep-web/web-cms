@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_team_team_member_cards",
+  "info": {
+    "displayName": "TeamMemberCard",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "affiliations": {
+      "type": "text"
+    },
+    "website": {
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)"
+    },
+    "location": {
+      "type": "string"
+    },
+    "shortCv": {
+      "type": "richtext"
+    }
+  }
+}
