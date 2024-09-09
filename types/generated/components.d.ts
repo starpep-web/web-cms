@@ -45,12 +45,25 @@ export interface CommonImageGallery extends Schema.Component {
   };
 }
 
+export interface CommonFaq extends Schema.Component {
+  collectionName: 'components_common_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    question: Attribute.Text & Attribute.Required;
+    answer: Attribute.RichText & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'team.team-member-card': TeamTeamMemberCard;
       'team.team-member-card-group': TeamTeamMemberCardGroup;
       'common.image-gallery': CommonImageGallery;
+      'common.faq': CommonFaq;
     }
   }
 }

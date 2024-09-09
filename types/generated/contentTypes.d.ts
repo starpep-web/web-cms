@@ -362,6 +362,36 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqPageFaqPage extends Schema.SingleType {
+  collectionName: 'faq_pages';
+  info: {
+    singularName: 'faq-page';
+    pluralName: 'faq-pages';
+    displayName: 'FaqPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    faqs: Attribute.Component<'common.faq', true> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -836,6 +866,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
