@@ -35,6 +35,18 @@
       "repeatable": false,
       "component": "team.team-member-card-group",
       "required": true
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.text-image-column",
+      "required": true
+    },
+    "heroText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.text-card",
+      "required": true
     }
   }
 }

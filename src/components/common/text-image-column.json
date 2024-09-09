@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_common_text_image_columns",
+  "info": {
+    "displayName": "TextImageColumn",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "flip": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

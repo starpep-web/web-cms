@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_common_text_cards",
+  "info": {
+    "displayName": "TextCard",
+    "icon": "strikeThrough"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "Secondary"
+      ],
+      "required": true,
+      "default": "Secondary"
+    }
+  }
+}

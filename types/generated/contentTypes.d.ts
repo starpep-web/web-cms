@@ -412,6 +412,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Required;
     developers: Attribute.Component<'team.team-member-card-group'> &
       Attribute.Required;
+    about: Attribute.Component<'common.text-image-column'> & Attribute.Required;
+    heroText: Attribute.Component<'common.text-card'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
