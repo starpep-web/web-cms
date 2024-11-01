@@ -1,0 +1,15 @@
+# Ignore everything by default.
+*
+
+# Manually add what to use.
+!config
+!database
+!public
+!src
+!types
+!Dockerfile
+!favicon.png
+!jsconfig.json
+!LICENSE
+!package*.json
+!README.md
