@@ -18,12 +18,9 @@ RUN npm run build
 
 FROM base AS runner
 
-RUN adduser -D starpep-web-cms
-USER starpep-web-cms
-
 WORKDIR /opt/app
 
-COPY --from=build --chown=starpep-web-cms /tmp/app .
+COPY --from=build /tmp/app .
 
 ENV HOST=0.0.0.0
 ENV PORT=1337
