@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_publications_publication_groups",
+  "info": {
+    "displayName": "PublicationGroup",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "publications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "publications.publication"
+    }
+  }
+}

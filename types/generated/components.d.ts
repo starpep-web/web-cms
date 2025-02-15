@@ -34,6 +34,45 @@ export interface TeamTeamMemberCardGroup extends Schema.Component {
   };
 }
 
+export interface PublicationsSoftwarePublication extends Schema.Component {
+  collectionName: 'components_publications_software_publications';
+  info: {
+    displayName: 'SoftwarePublication';
+    icon: 'archive';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    downloadUrl: Attribute.String & Attribute.Required;
+    sourceUrl: Attribute.String;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface PublicationsPublication extends Schema.Component {
+  collectionName: 'components_publications_publications';
+  info: {
+    displayName: 'Publication';
+    icon: 'file';
+    description: '';
+  };
+  attributes: {
+    citation: Attribute.RichText & Attribute.Required;
+    link: Attribute.String;
+  };
+}
+
+export interface PublicationsPublicationGroup extends Schema.Component {
+  collectionName: 'components_publications_publication_groups';
+  info: {
+    displayName: 'PublicationGroup';
+    icon: 'folder';
+  };
+  attributes: {
+    title: Attribute.String;
+    publications: Attribute.Component<'publications.publication', true>;
+  };
+}
+
 export interface CommonTextImageColumn extends Schema.Component {
   collectionName: 'components_common_text_image_columns';
   info: {
@@ -91,6 +130,9 @@ declare module '@strapi/types' {
     export interface Components {
       'team.team-member-card': TeamTeamMemberCard;
       'team.team-member-card-group': TeamTeamMemberCardGroup;
+      'publications.software-publication': PublicationsSoftwarePublication;
+      'publications.publication': PublicationsPublication;
+      'publications.publication-group': PublicationsPublicationGroup;
       'common.text-image-column': CommonTextImageColumn;
       'common.text-card': CommonTextCard;
       'common.image-gallery': CommonImageGallery;

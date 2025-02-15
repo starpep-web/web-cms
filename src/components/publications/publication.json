@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_publications_publications",
+  "info": {
+    "displayName": "Publication",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "citation": {
+      "type": "richtext",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
