@@ -86,6 +86,60 @@ export interface CommonFaq extends Schema.Component {
   };
 }
 
+export interface PublicationsSoftwarePublication extends Schema.Component {
+  collectionName: 'components_publications_software_publications';
+  info: {
+    displayName: 'SoftwarePublication';
+    icon: 'archive';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    downloadUrl: Attribute.String & Attribute.Required;
+    sourceUrl: Attribute.String;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface PublicationsSoftwarePublicationGroup extends Schema.Component {
+  collectionName: 'components_publications_software_publication_groups';
+  info: {
+    displayName: 'SoftwarePublicationGroup';
+    icon: 'folder';
+  };
+  attributes: {
+    title: Attribute.String;
+    publications: Attribute.Component<
+      'publications.software-publication',
+      true
+    >;
+  };
+}
+
+export interface PublicationsPublication extends Schema.Component {
+  collectionName: 'components_publications_publications';
+  info: {
+    displayName: 'Publication';
+    icon: 'file';
+    description: '';
+  };
+  attributes: {
+    citation: Attribute.RichText & Attribute.Required;
+    link: Attribute.String;
+  };
+}
+
+export interface PublicationsPublicationGroup extends Schema.Component {
+  collectionName: 'components_publications_publication_groups';
+  info: {
+    displayName: 'PublicationGroup';
+    icon: 'folder';
+  };
+  attributes: {
+    title: Attribute.String;
+    publications: Attribute.Component<'publications.publication', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -95,6 +149,10 @@ declare module '@strapi/types' {
       'common.text-card': CommonTextCard;
       'common.image-gallery': CommonImageGallery;
       'common.faq': CommonFaq;
+      'publications.software-publication': PublicationsSoftwarePublication;
+      'publications.software-publication-group': PublicationsSoftwarePublicationGroup;
+      'publications.publication': PublicationsPublication;
+      'publications.publication-group': PublicationsPublicationGroup;
     }
   }
 }

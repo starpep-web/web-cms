@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_publications_software_publication_groups",
+  "info": {
+    "displayName": "SoftwarePublicationGroup",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "publications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "publications.software-publication",
+      "required": false
+    }
+  }
+}

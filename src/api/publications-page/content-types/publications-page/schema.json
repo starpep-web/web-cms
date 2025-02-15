@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "publications_pages",
+  "info": {
+    "singularName": "publications-page",
+    "pluralName": "publications-pages",
+    "displayName": "PublicationsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "originalPublications": {
+      "type": "component",
+      "repeatable": false,
+      "component": "publications.publication-group",
+      "required": true
+    },
+    "relevantPublications": {
+      "type": "component",
+      "repeatable": false,
+      "component": "publications.publication-group",
+      "required": true
+    },
+    "softwarePublications": {
+      "type": "component",
+      "repeatable": false,
+      "component": "publications.software-publication-group",
+      "required": true
+    }
+  }
+}

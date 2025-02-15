@@ -362,76 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiFaqPageFaqPage extends Schema.SingleType {
-  collectionName: 'faq_pages';
-  info: {
-    singularName: 'faq-page';
-    pluralName: 'faq-pages';
-    displayName: 'FaqPage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    faqs: Attribute.Component<'common.faq', true> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::faq-page.faq-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::faq-page.faq-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomePageHomePage extends Schema.SingleType {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'HomePage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    imageGallery: Attribute.Component<'common.image-gallery'> &
-      Attribute.Required;
-    projectLeaders: Attribute.Component<'team.team-member-card-group'> &
-      Attribute.Required;
-    collaborators: Attribute.Component<'team.team-member-card-group'> &
-      Attribute.Required;
-    developers: Attribute.Component<'team.team-member-card-group'> &
-      Attribute.Required;
-    about: Attribute.Component<'common.text-image-column'> & Attribute.Required;
-    heroText: Attribute.Component<'common.text-card'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -858,6 +788,112 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqPageFaqPage extends Schema.SingleType {
+  collectionName: 'faq_pages';
+  info: {
+    singularName: 'faq-page';
+    pluralName: 'faq-pages';
+    displayName: 'FaqPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    faqs: Attribute.Component<'common.faq', true> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'HomePage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    imageGallery: Attribute.Component<'common.image-gallery'> &
+      Attribute.Required;
+    projectLeaders: Attribute.Component<'team.team-member-card-group'> &
+      Attribute.Required;
+    collaborators: Attribute.Component<'team.team-member-card-group'> &
+      Attribute.Required;
+    developers: Attribute.Component<'team.team-member-card-group'> &
+      Attribute.Required;
+    about: Attribute.Component<'common.text-image-column'> & Attribute.Required;
+    heroText: Attribute.Component<'common.text-card'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPublicationsPagePublicationsPage extends Schema.SingleType {
+  collectionName: 'publications_pages';
+  info: {
+    singularName: 'publications-page';
+    pluralName: 'publications-pages';
+    displayName: 'PublicationsPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    originalPublications: Attribute.Component<'publications.publication-group'> &
+      Attribute.Required;
+    relevantPublications: Attribute.Component<'publications.publication-group'> &
+      Attribute.Required;
+    softwarePublications: Attribute.Component<'publications.software-publication-group'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::publications-page.publications-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::publications-page.publications-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -868,8 +904,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::faq-page.faq-page': ApiFaqPageFaqPage;
-      'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -878,6 +912,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::publications-page.publications-page': ApiPublicationsPagePublicationsPage;
     }
   }
 }

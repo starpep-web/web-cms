@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_publications_software_publications",
+  "info": {
+    "displayName": "SoftwarePublication",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "downloadUrl": {
+      "type": "string",
+      "required": true
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
