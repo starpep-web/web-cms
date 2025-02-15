@@ -4,7 +4,8 @@
   "info": {
     "singularName": "publications-page",
     "pluralName": "publications-pages",
-    "displayName": "PublicationsPage"
+    "displayName": "PublicationsPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,10 +24,10 @@
       "component": "publications.publication-group",
       "required": true
     },
-    "starPepSoftware": {
+    "softwarePublications": {
       "type": "component",
       "repeatable": false,
-      "component": "publications.software-publication",
+      "component": "publications.software-publication-group",
       "required": true
     }
   }

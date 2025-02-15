@@ -864,6 +864,7 @@ export interface ApiPublicationsPagePublicationsPage extends Schema.SingleType {
     singularName: 'publications-page';
     pluralName: 'publications-pages';
     displayName: 'PublicationsPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -873,7 +874,7 @@ export interface ApiPublicationsPagePublicationsPage extends Schema.SingleType {
       Attribute.Required;
     relevantPublications: Attribute.Component<'publications.publication-group'> &
       Attribute.Required;
-    starPepSoftware: Attribute.Component<'publications.software-publication'> &
+    softwarePublications: Attribute.Component<'publications.software-publication-group'> &
       Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
